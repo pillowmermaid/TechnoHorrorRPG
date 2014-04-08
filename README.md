@@ -1,6 +1,6 @@
 # TechnoHorror RPG 
 
-An __exploration__ centric RPG with monster recruiting and some base-building elements with techology inspired horror themes. 
+An **exploration** centric RPG with monster recruiting and some base-building elements with techology inspired horror themes. 
 
 ## Todo List
 
