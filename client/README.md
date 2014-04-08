@@ -47,12 +47,12 @@ This will house your active members when you enter the Combat Phase which includ
 Ally Units in the Player Party will be populated from Enemy Units encountered through the Combat Phase.
 
 #### The Player Character
-####(#NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
 
 #### Allied Units
 
 #### Reserve Party
-#####(NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
 
 The Reserve Party is where newly recruited Units are kept when not in the Player Party. The Player can access the Reserve Party via The Fortress (see The Fortress description in the SERVER README, under LOCATIONS). The Reserve Party (at this time) does not have a limit to how many Units can be stored
 
@@ -112,13 +112,13 @@ The model for each Monster should end up looking like this:
 
 ## Gameplay Mechanics
 ### Exploration
-####(NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
 ### The Fortress
-####(NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
 #### Party Management
 #### Away Missions
 #### Sieges (????)
 ### Combat Phase
-####(NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
 ### Recruiting
-####(NOT IMPLEMENTED. Coming soon!)
+#####_(to be implemented)_
