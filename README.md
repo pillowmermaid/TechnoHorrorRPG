@@ -10,6 +10,6 @@ An exploration centric RPG with monster recruiting and some base-building elemen
 * Fortress and Party Management Mechanics
 * World Map and Exploration
 
-## Check in from time to time for more details as I work on it more
+### Check in from time to time for more details as I work on it more
 
 
