@@ -1,0 +1,3 @@
+#Ignore the following directories
+enemy-db/
+client/node_modules
