@@ -1,3 +1,13 @@
 #mid-container{
+  box-sizing: inherit;
+  padding: 1em;
+  background-color: red;
+  color: blue;
   float:left;
+}
+#vid-window{
+  box-sizing: inherit;
+}
+#action-window{
+  box-sizing: inherit;
 }

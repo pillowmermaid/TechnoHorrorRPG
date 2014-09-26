@@ -67,14 +67,40 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* line 1, ../sass/partials/_general.scss */
+#site-container {
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  float: left;
+  box-sizing: border-box;
+}
+
 /* line 1, ../sass/partials/_leftSidebar.scss */
 #left-container {
   height: 100%;
+  padding: 1em;
+  background-color: blue;
   color: red;
   float: left;
+  box-sizing: inherit;
 }
 
 /* line 1, ../sass/partials/_mainContainer.scss */
 #mid-container {
+  box-sizing: inherit;
+  padding: 1em;
+  background-color: red;
+  color: blue;
   float: left;
+}
+
+/* line 8, ../sass/partials/_mainContainer.scss */
+#vid-window {
+  box-sizing: inherit;
+}
+
+/* line 11, ../sass/partials/_mainContainer.scss */
+#action-window {
+  box-sizing: inherit;
 }
