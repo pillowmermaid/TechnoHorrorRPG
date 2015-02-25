@@ -32,7 +32,7 @@ Once you're finished with the initial set up, download the repository and make y
 
 * Install Grunt plugins:
     $ npm install
-* Execute the following command to build Trader Desktop:
+* Execute the following command to build the app:
     $ grunt
 * Start the server using the following command:
     $ node src/app.js
