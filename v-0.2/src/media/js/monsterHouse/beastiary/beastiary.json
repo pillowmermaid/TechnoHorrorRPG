@@ -1,0 +1,54 @@
+[
+    {
+        "_id": 1,
+        "image": "",
+        "name": "Uno",
+        "class": "Balance",
+        "description": "A being well rounded in all skills",
+        "stats": {
+            "HP": 5,
+            "POW": 5,
+            "DEF": 5,
+            "AGI": 5
+        }
+    },
+    {
+        "_id": 2,
+        "image": "",
+        "name": "Dos",
+        "class": "Aggressor",
+        "description": "A being which excels in offensive skills",
+        "stats": {
+            "HP": 6,
+            "POW": 10,
+            "DEF": 4,
+            "AGI": 6
+        }
+    },
+    {
+        "_id": 3,
+        "image": "",
+        "name": "Tres",
+        "class": "Stoic",
+        "description": "A being which excels in defensive skills",
+        "stats": {
+            "HP": 8,
+            "POW": 4,
+            "DEF": 10,
+            "AGI": 2
+        }
+    },
+    {
+        "_id": 4,
+        "image": "",
+        "name": "Quattro",
+        "class": "Swift",
+        "description": "A being which excels in agile skills",
+        "stats": {
+            "HP": 3,
+            "POW": 5,
+            "DEF": 2,
+            "AGI": 10
+        }
+    }
+]
