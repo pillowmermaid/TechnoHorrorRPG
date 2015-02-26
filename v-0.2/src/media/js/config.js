@@ -8,6 +8,9 @@ var require = {
         // Underscore
         underscore:                  'lib/underscore',
 
+        // Backbone
+        backbone:                    'lib/backbone',
+
         handlebars:                  'lib/handlebars-v2.0.0'
 
     },
@@ -20,6 +23,11 @@ var require = {
 
         underscore: {
             exports: '_'
+        },
+
+        backbone: {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
         },
 
         handlebars: {
