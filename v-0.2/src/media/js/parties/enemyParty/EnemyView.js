@@ -13,6 +13,7 @@ define(
 
 
             initialize: function(){
+                console.log(this.model);
                 this.listenTo(this.model, 'change', this.render);
             },
 
