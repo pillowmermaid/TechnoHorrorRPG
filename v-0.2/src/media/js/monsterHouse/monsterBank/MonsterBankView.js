@@ -3,10 +3,11 @@ define(
         'backbone',
         'underscore',
         'handlebars',
+        'monsterHouse/beastiary/MonsterBank',
         'monsterHouse/monsterBank/MonsterView',
         'text!monsterHouse/monsterBank/MonsterBankTemplate.html'
     ],
-    function(Backbone, _, Handlebars, MonsterView, MonsterBankTemplate) {
+    function(Backbone, _, Handlebars, MonsterBank, MonsterView, MonsterBankTemplate) {
         'use strict';
         var MonsterViewerView = Backbone.View.extend({
             el: '#app-container',
@@ -14,12 +15,13 @@ define(
             template: Handlebars.compile(MonsterBankTemplate),
 
             initialize: function(){
+                this.collection = MonsterBank;
                 this.listenTo(this.collection, 'reset', this.loadMonsterBank);
             },
 
             render: function(){
-                this.$el.html(this.template);                
-                this.collection.fetch({reset:true});
+                this.$el.html(this.template);       
+                this.loadMonsterBank();
                 return this;
             },
 

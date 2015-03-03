@@ -8,11 +8,8 @@ define(
         'use strict';
 
         var beastiary = new Beastiary();
+        beastiary.fetch({reset:true});
 
-        var monsterBank = {
-            initMonsterBank: function() { return beastiary; },
-        };
-        
-        return monsterBank;
+        return beastiary;
     }
 );

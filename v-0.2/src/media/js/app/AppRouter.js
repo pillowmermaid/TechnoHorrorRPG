@@ -1,12 +1,12 @@
 define([
     'backbone',
     'areas/main/MainAreaView',
-    'areas/arena/ArenaView',
+    'areas/arena/Arena',
     'monsterHouse/beastiary/MonsterBank',
     'monsterHouse/monsterBank/MonsterBankView'
 ],
 
-function(Backbone, MainAreaView, ArenaView, MonsterBank, MonsterBankView) {
+function(Backbone, MainAreaView, Arena, MonsterBank, MonsterBankView) {
     'use strict';
 
     var Router = Backbone.Router.extend({
@@ -18,10 +18,9 @@ function(Backbone, MainAreaView, ArenaView, MonsterBank, MonsterBankView) {
         },
 
         initialize: function(){
-            this.monsterBank = MonsterBank.initMonsterBank();
             this.mainAreaView = new MainAreaView();
-            this.arenaView = new ArenaView();
-            this.monsterBankView = new MonsterBankView({collection: this.monsterBank});
+            this.arena = new Arena();
+            this.monsterBankView = new MonsterBankView();
         },
 
         goHome: function() {
@@ -29,7 +28,7 @@ function(Backbone, MainAreaView, ArenaView, MonsterBank, MonsterBankView) {
         },
 
         goToArena: function() {
-            this.arenaView.render();
+            this.arena.render();
         },
 
         goToMV: function(){
