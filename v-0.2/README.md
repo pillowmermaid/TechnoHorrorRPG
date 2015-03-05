@@ -11,7 +11,7 @@ The src folder is where all the fun, game stuff happens.
 
 ## Dev Notes and Known Issues
 
-~(04/08/2014) - There is an issue when monster data does not load in from the beastiary.json file on occasion.~
+~~(04/08/2014) - There is an issue when monster data does not load in from the beastiary.json file on occasion.~~
 
 ## Set Up for Developement
 
