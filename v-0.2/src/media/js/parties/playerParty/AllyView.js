@@ -2,25 +2,26 @@ define(
     [
         'backbone',
         'handlebars',
-        'text!parties/enemyParty/EnemyTemplate.html'
+        'text!parties/playerParty/AllyTemplate.html'
     ],
-    function(Backbone, Handlebars, EnemyTemplate){
-       var EnemyView = Backbone.View.extend({
+    function(Backbone, Handlebars, AllyTemplate){
+       var AllyView = Backbone.View.extend({
             tagName: 'div',
-            className: 'enemy',
+            className: 'ally',
 
-            template: Handlebars.compile(EnemyTemplate),
+            template: Handlebars.compile(AllyTemplate),
 
 
             initialize: function(){
+                console.log(this.model);
                 this.listenTo(this.model, 'change', this.render);
             },
 
             render: function(){
                 this.$el.html(this.template(this.model.toJSON()));
                 return this;
-            }
+            },
        });
-       return EnemyView;
+       return AllyView;
     }
 );

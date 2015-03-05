@@ -27,7 +27,7 @@ define(
             spawnParty: function(){
                 this.enemies = [];
                 for(var i = 0; i<this.collection.length; i++){
-                    var enemy = new EnemyView({model:this.collection.models[Math.floor(Math.random() * this.collection.length)]});
+                    var enemy = new EnemyView({model:this.collection.models[i]});
                     this.enemies[i] = enemy;
                 }
             },
