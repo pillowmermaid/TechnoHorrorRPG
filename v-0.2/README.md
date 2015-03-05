@@ -1,6 +1,6 @@
-# TechnoHorror RPG Client
+# TechnoHorror RPG
 
-The client folder is where all the fun, game stuff happens. Player/Hostile Party as well as the battle system and other gameplay code will be found here.
+The src folder is where all the fun, game stuff happens.
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@ The client folder is where all the fun, game stuff happens. Player/Hostile Party
 
 ## Dev Notes and Known Issues
 
-(04/08/2014) - There is an issue when monster data does not load in from the beastiary.json file on occasion. 
+~(04/08/2014) - There is an issue when monster data does not load in from the beastiary.json file on occasion.~
 
 ## Set Up for Developement
 
@@ -37,14 +37,13 @@ Once you're finished with the initial set up, download the repository and make y
 * Start the server using the following command:
     $ node src/app.js
 * http://localhost:8998](http://localhost:8998) and wonder and marvel at what you see (or don't in these early stages)
+* use Grunt Watch in a seperate terminal window for easy SASS compiling!
 
 ## Parties
 
 ### Player Party
 
-This will house your active members when you enter the Combat Phase which includes your Player Character and (at the moment) one other Ally Unit.
-
-Ally Units in the Player Party will be populated from Enemy Units encountered through the Combat Phase.
+Houses any recruited monsters you managed to convince to fight for you during a battle. This does not include you. You're not a monster. Are you?
 
 #### The Player Character
 #####_(to be implemented)_
