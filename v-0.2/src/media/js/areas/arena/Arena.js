@@ -25,8 +25,6 @@ define(
                 if(this.enemyPartyView){
                     this.enemyPartyView.renderParty();
                 }
-                var target = $('#player');
-                PlayerView.renderToTarget(target);
                 return this;
             },
 

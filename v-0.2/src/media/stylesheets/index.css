@@ -95,13 +95,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 1, ../sass/partials/_monsters.scss */
-#enemy-party {
+.enemy {
+  box-sizing: border-box;
   padding: 1em;
+  overflow: auto;
+}
+/* line 5, ../sass/partials/_monsters.scss */
+.enemy ul {
+  box-sizing: inherit;
+  margin-left: 10px;
   float: left;
+}
+/* line 10, ../sass/partials/_monsters.scss */
+.enemy li {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+}
+/* line 15, ../sass/partials/_monsters.scss */
+.enemy .enemyImage {
+  box-sizing: inherit;
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+/* line 21, ../sass/partials/_monsters.scss */
+.enemy:hover {
+  cursor: pointer;
+  background-color: rgba(0, 255, 0, 0.5);
+}
+/* line 25, ../sass/partials/_monsters.scss */
+.enemy:active {
+  cursor: pointer;
+  background-color: rgba(0, 150, 0, 0.9);
 }
 
 /* line 1, ../sass/partials/_player.scss */
 #player {
+  box-sizing: inherit;
   padding: 1em;
-  float: left;
+}
+/* line 4, ../sass/partials/_player.scss */
+#player:hover {
+  cursor: pointer;
+  background-color: rgba(255, 0, 0, 0.5);
 }

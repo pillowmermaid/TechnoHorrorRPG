@@ -2,12 +2,11 @@ define([
     'backbone',
     'areas/main/MainAreaView',
     'areas/arena/Arena',
-    'parties/playerParty/PlayerView',
     'monsterHouse/beastiary/MonsterBank',
     'monsterHouse/monsterBank/MonsterBankView'
 ],
 
-function(Backbone, MainAreaView, Arena, PlayerView, MonsterBank, MonsterBankView) {
+function(Backbone, MainAreaView, Arena, MonsterBank, MonsterBankView) {
     'use strict';
 
     var Router = Backbone.Router.extend({
@@ -30,7 +29,6 @@ function(Backbone, MainAreaView, Arena, PlayerView, MonsterBank, MonsterBankView
 
         goToArena: function() {
             this.arena.render();
-            PlayerView.render();
         },
 
         goToMV: function(){

@@ -8,26 +8,24 @@ define(
     ],
     function(Backbone, Handlebars, Player, PlayerPartyView, PlayerTemplate){
        var PlayerView = Backbone.View.extend({
-            tagName: 'div',
-            className: 'player',
+            el: '#player-menu',
 
             template: Handlebars.compile(PlayerTemplate),
 
-
             initialize: function(){
                 this.model = new Player();
+                this.on('fightMe', this.battle, this);
                 this.listenTo(this.model, 'change', this.render);
             },
 
-            renderToTarget: function(target){
-                target.html(this.template(this.model.toJSON()));
+            render: function(){
+                this.$el.html(this.template(this.model.toJSON()));
                 return this;
             },
 
-            render: function(){
-                $('#player-menu').html(this.template(this.model.toJSON()));
-                return this;
-            },
+            battle: function(enemy){
+                console.log('enemy',enemy);
+            }
        });
        return new PlayerView;
     }
