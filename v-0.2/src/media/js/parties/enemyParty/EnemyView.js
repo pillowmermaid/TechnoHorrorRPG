@@ -29,6 +29,7 @@ define(
                 var myStats = _.clone(this.model.get('stats'));
                 var isFighting = true;
                 var playerTurn, isDead = false;
+                var damage = 2;
                 if(playerStats.AGI > myStats.AGI){
                     playerTurn = true;
                 }
@@ -37,35 +38,23 @@ define(
                 }
                 do{
                     if(playerTurn){
-                        console.log('me before',myStats);
-                        var damage = 2;
                         myStats.HP -= damage;
                         this.model.set('stats',myStats);
-                        console.log('me after',myStats);
                         console.log('I took',damage,'damage and have',myStats.HP,'HP left');
                         if(this.model.get('stats').HP <= 0){
-                            console.log('I\'m Dead!');
                             isFighting = !isFighting;
                             isDead = true;
                         }
                         else{
-                            console.log("Ouch that hurt!");
                             playerTurn = !playerTurn;
                         }
                     }
                     else{
-                        console.log('player before',playerStats);
-                        var damage = 2;
-                        playerStats.HP -= damage;
-                        PlayerView.model.set('stats', playerStats);
-                        console.log('player after',playerStats);
-                        console.log('Player took',damage,'damage and has',playerStats.HP,'HP left');
+                        PlayerView.trigger('hit',damage);
                         if(PlayerView.model.get('stats').HP <= 0){
-                            console.log('Gotcha bitch!');
                             isFighting = !isFighting;
                         }
                         else{
-                            console.log("I'll get you next time!");
                             playerTurn = !playerTurn;
                         }
                     }
@@ -75,7 +64,7 @@ define(
                     this.dead();
                 }
                 else{
-                    alert('Ded');
+                    PlayerView.trigger('dead');
                 }
             },
 

@@ -14,17 +14,30 @@ define(
 
             initialize: function(){
                 this.model = new Player();
-                this.on('fightMe', this.battle, this);
+                this.on('hit', this.hit, this);
+                this.on('levelUp', this.levelUp, this);
+                this.on('dead', this.dead, this);
                 this.listenTo(this.model, 'change', this.render);
             },
 
             render: function(){
+                console.log('rendering');
                 this.$el.html(this.template(this.model.toJSON()));
                 return this;
             },
 
-            battle: function(enemy){
-                console.log('enemy',enemy);
+            hit: function(damage){
+                console.log('damage',damage);
+            },
+
+            dead: function(){
+                alert('I\'m dead!');
+                this.model.destroy();
+                this.respawn();
+            },
+
+            respawn: function(){
+                this.model = new Player();
             }
        });
        return new PlayerView;

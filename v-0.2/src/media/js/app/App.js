@@ -7,12 +7,16 @@ define(
     function(Backbone, AppRouter, PlayerView) {
         'use strict';
 
-        return {
-            start: function start() {
+        var App = {
+            start: function() {
                 PlayerView.render();
                 var router = new AppRouter();
                 Backbone.history.start();
+            },
+            restart: function(){
+
             }
-        };
+        }
+        return App;
     }
 );
