@@ -3,10 +3,11 @@ define(
         'backbone',
         'underscore',
         'handlebars',
+        'gameStates/BattleState',
         'parties/playerParty/PlayerView',
         'text!parties/enemyParty/EnemyTemplate.html'
     ],
-    function(Backbone, _, Handlebars, PlayerView, EnemyTemplate){
+    function(Backbone, _, Handlebars, BattleState, PlayerView, EnemyTemplate){
        var EnemyView = Backbone.View.extend({
             className:'enemy',
             template: Handlebars.compile(EnemyTemplate),
@@ -25,47 +26,16 @@ define(
             },
 
             fightMe: function(){
-                var playerStats = _.clone(PlayerView.model.get('stats'));
-                var myStats = _.clone(this.model.get('stats'));
-                var isFighting = true;
-                var playerTurn, isDead = false;
-                var damage = 2;
-                if(playerStats.AGI > myStats.AGI){
-                    playerTurn = true;
-                }
-                else{
-                    playerTurn = false;
-                }
-                do{
-                    if(playerTurn){
-                        myStats.HP -= damage;
-                        this.model.set('stats',myStats);
-                        console.log('I took',damage,'damage and have',myStats.HP,'HP left');
-                        if(this.model.get('stats').HP <= 0){
-                            isFighting = !isFighting;
-                            isDead = true;
-                        }
-                        else{
-                            playerTurn = !playerTurn;
-                        }
+                    BattleState.attackEnemy(this.model);
+                    console.log('I took 2 damage and have',this.model.get('stats').HP,'HP left');
+                    if(this.model.get('stats').HP <= 0){
+                        this.dead();
                     }
-                    else{
-                        PlayerView.trigger('hit',damage);
-                        if(PlayerView.model.get('stats').HP <= 0){
-                            isFighting = !isFighting;
-                        }
-                        else{
-                            playerTurn = !playerTurn;
-                        }
+                    BattleState.attackPlayer(PlayerView.model);
+                    PlayerView.trigger('hit');
+                    if(PlayerView.model.get('stats').HP <= 0){
+                        PlayerView.trigger('dead');
                     }
-                }
-                while (isFighting);
-                if(isDead){
-                    this.dead();
-                }
-                else{
-                    PlayerView.trigger('dead');
-                }
             },
 
             dead: function(){

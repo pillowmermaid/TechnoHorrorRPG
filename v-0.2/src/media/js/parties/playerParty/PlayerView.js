@@ -26,8 +26,8 @@ define(
                 return this;
             },
 
-            hit: function(damage){
-                console.log('damage',damage);
+            hit: function(){
+                console.log('I got hit!');
             },
 
             dead: function(){
