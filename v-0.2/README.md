@@ -36,7 +36,7 @@ Once you're finished with the initial set up, download the repository and make y
     $ grunt
 * Start the server using the following command:
     $ node src/app.js
-* http://localhost:8998](http://localhost:8998) and wonder and marvel at what you see (or don't in these early stages)
+* Hit up your localhost (http://localhost:8998 in this case) and wonder and marvel at what you see (or don't in these early stages)
 * use Grunt Watch in a seperate terminal window for easy SASS compiling!
 
 ## Parties
