@@ -14,14 +14,13 @@ define(
 
             initialize: function(){
                 this.model = new Player();
-                this.on('hit', this.hit, this);
+                this.on('hit', this.render, this);
                 this.on('levelUp', this.levelUp, this);
                 this.on('dead', this.dead, this);
-                this.listenTo(this.model, 'change', this.render);
+                this.on('respawn',this.respawn, this);
             },
 
             render: function(){
-                console.log('rendering');
                 this.$el.html(this.template(this.model.toJSON()));
                 return this;
             },
@@ -33,11 +32,12 @@ define(
             dead: function(){
                 alert('I\'m dead!');
                 this.model.destroy();
-                this.respawn();
+                this.trigger('respawn');
             },
 
             respawn: function(){
                 this.model = new Player();
+                this.render();
             }
        });
        return new PlayerView;

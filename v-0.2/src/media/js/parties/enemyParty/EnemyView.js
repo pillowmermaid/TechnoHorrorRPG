@@ -26,22 +26,21 @@ define(
             },
 
             fightMe: function(){
-                    BattleState.attackEnemy(this.model);
-                    console.log('I took 2 damage and have',this.model.get('stats').HP,'HP left');
-                    if(this.model.get('stats').HP <= 0){
-                        this.dead();
-                    }
-                    BattleState.attackPlayer(PlayerView.model);
-                    PlayerView.trigger('hit');
-                    if(PlayerView.model.get('stats').HP <= 0){
-                        PlayerView.trigger('dead');
-                    }
+                BattleState.attack(this.model);
+                console.log('I took 2 damage and have',this.model.get('stats').HP,'HP left');
+                if(this.model.get('stats').HP <= 0){
+                    this.dead();
+                }
+                BattleState.attack(PlayerView.model);
+                PlayerView.trigger('hit');
+                if(PlayerView.model.get('stats').HP <= 0){
+                    PlayerView.trigger('dead');
+                }
             },
 
             dead: function(){
                 this.model.destroy
                 this.remove();
-                this.unbind();
             }
        });
        return EnemyView;

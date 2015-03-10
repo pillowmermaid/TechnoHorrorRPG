@@ -12,6 +12,7 @@ define(
                 PlayerView.render();
                 var router = new AppRouter();
                 Backbone.history.start();
+                router.navigate('arena');
             },
             restart: function(){
 

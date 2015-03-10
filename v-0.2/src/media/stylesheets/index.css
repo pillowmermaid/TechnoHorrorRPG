@@ -125,12 +125,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 21, ../sass/partials/_monsters.scss */
 .enemy:hover {
   cursor: pointer;
-  background-color: rgba(0, 255, 0, 0.5);
+  background-color: rgba(255, 0, 0, 0.5);
 }
 /* line 25, ../sass/partials/_monsters.scss */
 .enemy:active {
   cursor: pointer;
-  background-color: rgba(0, 150, 0, 0.9);
+  background-color: rgba(150, 0, 0, 0.9);
 }
 
 /* line 1, ../sass/partials/_player.scss */
@@ -141,5 +141,5 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 4, ../sass/partials/_player.scss */
 #player:hover {
   cursor: pointer;
-  background-color: rgba(255, 0, 0, 0.5);
+  background-color: rgba(0, 255, 0, 0.5);
 }

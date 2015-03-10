@@ -7,16 +7,11 @@ define(
         'use strict';
         var BattleState = {
 
-            attackEnemy: function(target){
+            attack: function(target){
                 var targetStats = _.clone(target.get('stats'));
                 targetStats.HP -= 2;
+                if(targetStats.HP <= 0){targetStats.HP=0;}
                 target.set('stats',targetStats);
-            },
-
-            attackPlayer: function(player){
-                var playerStats = _.clone(player.get('stats'));
-                playerStats.HP -= 2;
-                player.set('stats',playerStats);
             }
 
         };
