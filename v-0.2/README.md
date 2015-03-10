@@ -21,21 +21,21 @@ You'll want the following tools installed before you start:
 
 * Install [Node.js](http://nodejs.org/).
 * Install [Grunt](https://github.com/gruntjs/grunt/wiki/Getting-started).
-    `$ npm install -g grunt-cli`
+`$ npm install -g grunt-cli`
 * Install [Ruby](http://rubyinstaller.org/downloads/). (required for compass/sass)
 * Install [Compass](http://compass-style.org/install/) (used for CSS authoring).
-    `$ gem install compass`
+`$ gem install compass`
 
 ### Getting Started
 
 Once you're finished with the initial set up, download the repository and make your way into the client folder via your terminal:
 
 * Install Grunt plugins:
-    `$ npm install`
+`$ npm install`
 * Execute the following command to build the app:
-    `$ grunt`
+`$ grunt`
 * Start the server using the following command:
-    `$ node src/app.js`
+`$ node src/app.js`
 * Hit up your localhost (http://localhost:8998 in this case) and wonder and marvel at what you see (or don't in these early stages)
 * use `grunt watch` in a seperate terminal window for easy SASS compiling!
 
@@ -47,7 +47,6 @@ Once you're finished with the initial set up, download the repository and make y
 ### Enemy Party
 
 ### Enemy
-*####Not implemented in code yet!*
 
 Monsters (for lack of a better term right now) are what The Player will be fighting and eating throughout their adventures. 
 
