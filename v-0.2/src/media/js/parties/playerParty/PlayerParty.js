@@ -9,12 +9,12 @@ monster chums
 define(
     [
         'backbone',
-        'parties/playerParty/Ally',
+        'parties/enemyParty/Enemy',
     ],
-    function(Backbone, Ally) {
-        var PlayerParty = Backbone.Collection.extend({
-            model: Ally,
+    function(Backbone, Enemy) {
+        var PlayerTummy = Backbone.Collection.extend({
+            model: Enemy,
         });
-        return PlayerParty;
+        return PlayerTummy;
     }
 );

@@ -3,10 +3,10 @@ define(
         'backbone',
         'handlebars',
         'parties/playerParty/Player',
-        'parties/playerParty/PlayerPartyView',
+        'parties/playerParty/PlayerTummyView',
         'text!parties/playerParty/PlayerTemplate.html'
     ],
-    function(Backbone, Handlebars, Player, PlayerPartyView, PlayerTemplate){
+    function(Backbone, Handlebars, Player, PlayerTummyView, PlayerTemplate){
        var PlayerView = Backbone.View.extend({
             el: '#player-menu',
 
@@ -22,6 +22,7 @@ define(
 
             render: function(){
                 this.$el.html(this.template(this.model.toJSON()));
+                this.tummy = new PlayerTummyView();
                 return this;
             },
 

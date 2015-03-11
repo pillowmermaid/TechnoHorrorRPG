@@ -3,6 +3,7 @@
         "_id": 1,
         "image": "",
         "name": "Uno",
+        "family": "Biorganic",
         "class": "Balance",
         "description": "A being well rounded in all skills",
         "stats": {
@@ -16,6 +17,7 @@
         "_id": 2,
         "image": "",
         "name": "Dos",
+        "family": "Technological",
         "class": "Aggressor",
         "description": "A being which excels in offensive skills",
         "stats": {
@@ -29,6 +31,7 @@
         "_id": 3,
         "image": "",
         "name": "Tres",
+        "family": "Technological",
         "class": "Stoic",
         "description": "A being which excels in defensive skills",
         "stats": {
@@ -42,6 +45,7 @@
         "_id": 4,
         "image": "",
         "name": "Quattro",
+        "family": "Supernatural",
         "class": "Swift",
         "description": "A being which excels in agile skills",
         "stats": {

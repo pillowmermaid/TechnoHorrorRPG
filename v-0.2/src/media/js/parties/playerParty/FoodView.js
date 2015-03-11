@@ -2,14 +2,14 @@ define(
     [
         'backbone',
         'handlebars',
-        'text!parties/playerParty/AllyTemplate.html'
+        'text!parties/playerParty/FoodTemplate.html'
     ],
-    function(Backbone, Handlebars, AllyTemplate){
-       var AllyView = Backbone.View.extend({
+    function(Backbone, Handlebars, FoodTemplate){
+       var FoodView = Backbone.View.extend({
             tagName: 'div',
-            className: 'ally',
+            className: 'digested-monster',
 
-            template: Handlebars.compile(AllyTemplate),
+            template: Handlebars.compile(FoodTemplate),
 
 
             initialize: function(){
@@ -22,6 +22,6 @@ define(
                 return this;
             },
        });
-       return AllyView;
+       return FoodView;
     }
 );
