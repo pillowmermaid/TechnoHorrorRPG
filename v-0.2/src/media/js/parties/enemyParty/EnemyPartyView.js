@@ -7,17 +7,13 @@ define(
         'parties/enemyParty/EnemyParty',
         'parties/enemyParty/EnemyView',
         'parties/enemyParty/Enemy',
-        'text!parties/enemyParty/EnemyPartyTemplate.html'
     ],
-    function(Backbone, _, Handlebars, MonsterBank, EnemyParty, EnemyView, Enemy, EnemyPartyTemplate) {
+    function(Backbone, _, Handlebars, MonsterBank, EnemyParty, EnemyView, Enemy) {
         'use strict';
         var EnemyPartyView = Backbone.View.extend({
             el: '#enemy-party',
 
-            template: Handlebars.compile(EnemyPartyTemplate),
-
             initialize: function(){
-                this.on('')
             },
 
             render: function(){
