@@ -4,6 +4,10 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass/reset";
+@import "partials/arena";
 @import "partials/general";
 @import "partials/leftSidebar";
-@import "partials/mainContainer"
+@import "partials/mainContainer";
+@import "partials/monsters";
+@import "partials/player";
+
