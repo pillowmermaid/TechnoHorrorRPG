@@ -12,4 +12,3 @@ You are lowly, basic monster. You are not special. You are infact so devoid of a
 * Evolution Tree
 * World Map and Exploration
 * A bloody title
-
