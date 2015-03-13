@@ -22,7 +22,6 @@ define(
                 this.spawn();
                 this.on('hit', this.hit, this);
                 this.on('levelUp', this.levelUp, this);
-                this.on('dead', this.dead, this);
             },
 
             render: function(){
@@ -46,12 +45,19 @@ define(
                 console.log('I\'m evolllviiiiing');
             },
 
-            hit: function(payback){
-                console.log(BattleState);
-                this.model.set('stats', payback.playerStats);
+            hit: function(damage, enemy, retaliate){
+                this.model.set('stats', damage);
                 console.log(this.model.get('name'),'I took 1 damage and have',this.model.get('stats').HP,'HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
-                else{ BattleState.attackTarget(payback.attacker); }
+                else{
+                    if(!retaliate){
+                        var retaliate = true;
+                        BattleState.attackTarget(enemy, this, retaliate); 
+                    }
+                    else{
+                        console.log('End of Turn');
+                    }
+                }
             },
 
             levelUp: function(){

@@ -4,9 +4,10 @@ define(
         'underscore',
         'handlebars',
         'gameStates/BattleState',
+        'parties/playerParty/PlayerView',
         'text!parties/enemyParty/EnemyTemplate.html'
     ],
-    function(Backbone, _, Handlebars, BattleState, EnemyTemplate){
+    function(Backbone, _, Handlebars, BattleState, PlayerView, EnemyTemplate){
        var EnemyView = Backbone.View.extend({
             className:'enemy',
             template: Handlebars.compile(EnemyTemplate),
@@ -19,7 +20,6 @@ define(
             initialize: function(){
                 this.listenTo(this.model, 'change', this.render);
                 this.on('hit', this.hit, this);
-                this.on('dead', this.dead, this);
             },
 
             render: function(){
@@ -38,14 +38,22 @@ define(
             },
 
             fight: function(){
-                BattleState.attackTurn(this);
+                BattleState.attackPhase(this, PlayerView);
             },
 
-            hit: function(damage){
+            hit: function(damage, player, retaliate){
                 this.model.set('stats', damage);
                 console.log(this.model.get('name'),'I took 2 damage and have',this.model.get('stats').HP,'HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
-                else{ BattleState.attackPlayer(); }
+                else{
+                    if(!retaliate){
+                        var retaliate = true;
+                        BattleState.attackTarget(player, this, retaliate); 
+                    }
+                    else{
+                        console.log('End of Turn');
+                    }
+                }
             }
        });
        return EnemyView;
