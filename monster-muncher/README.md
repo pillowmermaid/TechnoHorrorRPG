@@ -1,4 +1,4 @@
-# TechnoHorror RPG
+# Monster Muncher
 The src folder is where all the fun, game stuff happens.
 
 ## Table of Contents
