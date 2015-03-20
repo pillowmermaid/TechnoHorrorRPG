@@ -1,5 +1,5 @@
-#Ignore the following directories
-node_modules
-.DS_Store
-**/.DS_Store
-.sass-cache
+#Ignore the following directories and files
+/.DS_Store
+/.sass-cache
+monster-muncher/node_modules
+monster-muncher/DS_Store
