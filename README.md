@@ -1,4 +1,4 @@
-# TechnoHorror RPG 
+# Monster Muncher 
 
 This is a monster fighter with RPG elements built with Backbone and Require. The main mechanic is defeating and eating different types of monsters in order to grow yourself into a bigger, badder monster. Your diet is important, as different combinations of monsters will turn you into different things! As the title suggests, the idea for the theme of the game revolves around technological spooky stuff not unlike what you see out of DOOM or H.R. Giger. And ghosts. Don't forget ghosts.
 
