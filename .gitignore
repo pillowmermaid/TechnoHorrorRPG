@@ -2,4 +2,5 @@
 /.DS_Store
 /.sass-cache
 monster-muncher/node_modules
-monster-muncher/DS_Store
+monster-muncher/.DS_Store
+monster-muncher/src/.DS_Store
