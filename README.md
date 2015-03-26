@@ -27,7 +27,6 @@ Once you're finished with the initial set up, download the repository and make y
 `$ node src/app.js`
 * Hit up your localhost (http://localhost:8998 in this case) and wonder and marvel at what you see (or don't in these early stages)
 * use `grunt watch` in a seperate terminal window for easy SASS compiling!
-* 
 
 
 ## Todo List
