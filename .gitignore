@@ -1,6 +1,4 @@
 #Ignore the following directories and files
-/.DS_Store
-/.sass-cache
+*.DS_Store
+monster-muncher/src/media/.sass-cache
 monster-muncher/node_modules
-monster-muncher/.DS_Store
-monster-muncher/src/.DS_Store

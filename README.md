@@ -17,7 +17,7 @@ You'll want the following tools installed before you start:
 `$ gem install compass`
 
 ### Getting Started
-Once you're finished with the initial set up, download the repository and make your way into the client folder via your terminal:
+Once you're finished with the initial set up, download the repository and make your way into the monster-muncher folder via your terminal:
 
 * Install Grunt plugins:
 `$ npm install`
