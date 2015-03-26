@@ -3,36 +3,11 @@ The src folder is where all the fun, game stuff happens.
 
 ## Table of Contents
 * Dev Notes and Known Issues
-* Set Up for Developement
 * Players and Units
 * Game Mechanics
 
 ## Dev Notes and Known Issues
 ~~(04/08/2014) - There is an issue when monster data does not load in from the beastiary.json file on occasion.~~
-
-## Set Up for Developement
-
-### Prerequisites
-You'll want the following tools installed before you start:
-
-* Install [Node.js](http://nodejs.org/).
-* Install [Grunt](https://github.com/gruntjs/grunt/wiki/Getting-started).
-`$ npm install -g grunt-cli`
-* Install [Ruby](http://rubyinstaller.org/downloads/). (required for compass/sass)
-* Install [Compass](http://compass-style.org/install/) (used for CSS authoring).
-`$ gem install compass`
-
-### Getting Started
-Once you're finished with the initial set up, download the repository and make your way into the client folder via your terminal:
-
-* Install Grunt plugins:
-`$ npm install`
-* Execute the following command to build the app:
-`$ grunt`
-* Start the server using the following command:
-`$ node src/app.js`
-* Hit up your localhost (http://localhost:8998 in this case) and wonder and marvel at what you see (or don't in these early stages)
-* use `grunt watch` in a seperate terminal window for easy SASS compiling!
 
 ## Parties
 
