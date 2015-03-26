@@ -46,9 +46,12 @@ define(
                 console.log(this.model.get('name'),'I took 2 damage and have',this.model.get('stats').HP,'HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{
+                    var me = this;
                     if(!retaliate){
                         var retaliate = true;
-                        BattleState.attackTarget(player, this, retaliate); 
+                        setTimeout(function(){
+                            BattleState.attackTarget(player, me, retaliate);
+                        }, 2000);
                     }
                     else{
                         console.log('End of Turn');

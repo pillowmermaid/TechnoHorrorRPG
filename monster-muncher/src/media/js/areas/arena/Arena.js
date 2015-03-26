@@ -8,7 +8,7 @@ define(
     function(Backbone, Handlebars, EnemyPartyView, ArenaTemplate) {
         'use strict';
         var ArenaView = Backbone.View.extend({
-            el: '#app-container',
+            el: '#arena-container',
 
             events:{
                 'click #spawn-enemy-party': 'spawnEnemyParty',
@@ -22,11 +22,11 @@ define(
             },
 
             spawnEnemyParty: function(){
-                var enemyPartyView = new EnemyPartyView();
-                enemyPartyView.render();
+                this.enemyPartyView = new EnemyPartyView();
+                this.enemyPartyView.render();
             }
 
         });
-        return ArenaView;
+        return new ArenaView;
     }
 );

@@ -10,7 +10,7 @@ define(
     function(Backbone, _, Handlebars, MonsterBank, MonsterView, MonsterBankTemplate) {
         'use strict';
         var MonsterViewerView = Backbone.View.extend({
-            el: '#app-container',
+            el: '#menu-container',
 
             template: Handlebars.compile(MonsterBankTemplate),
 
