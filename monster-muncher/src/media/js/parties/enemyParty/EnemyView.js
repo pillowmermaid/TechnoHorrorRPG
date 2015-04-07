@@ -4,7 +4,7 @@ define(
         'underscore',
         'handlebars',
         'gameStates/BattleState',
-        'parties/playerParty/PlayerView',
+        'parties/player/PlayerView',
         'text!parties/enemyParty/EnemyTemplate.html'
     ],
     function(Backbone, _, Handlebars, BattleState, PlayerView, EnemyTemplate){
@@ -20,6 +20,7 @@ define(
             initialize: function(){
                 this.listenTo(this.model, 'change', this.render);
                 this.on('hit', this.hit, this);
+                this.on('dead', this.dead, this);
             },
 
             render: function(){
@@ -34,7 +35,7 @@ define(
             },
 
             eat: function(){
-                BattleState.eatTarget(this.model);
+                BattleState.eatTarget(this, PlayerView);
             },
 
             fight: function(){
@@ -51,7 +52,7 @@ define(
                         var retaliate = true;
                         setTimeout(function(){
                             BattleState.attackTarget(player, me, retaliate);
-                        }, 2000);
+                        }, 1200);
                     }
                     else{
                         console.log('End of Turn');

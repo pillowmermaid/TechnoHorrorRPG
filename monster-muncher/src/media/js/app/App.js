@@ -3,7 +3,7 @@ define(
         'backbone',
         'app/AppRouter',
         'areas/arena/Arena',
-        'parties/playerParty/PlayerView'
+        'parties/player/PlayerView'
     ],
     function(Backbone, AppRouter, Arena, PlayerView) {
         'use strict';

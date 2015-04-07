@@ -31,9 +31,21 @@ define(
                 target.trigger('hit', targetStats, attacker, retaliate);
             },
 
-            eatTarget: function(target){
-                
-
+            /* If the target is at or belo 15% of their HP, the player
+            can eat them; removing it from the battlefield and placing
+            it in the player's "belly" */
+            eatTarget: function(target, player){
+                var bs = this;
+                var targetHP = target.model.get('stats').HP;
+                if( targetHP <= 2 ){
+                    player.trigger('eat', target);
+                }
+                else{
+                    console.log('Target could not be eaten!');
+                    setTimeout(function(){
+                        bs.attackTarget(player,this,true);
+                    },2000);
+                }
             }
 
         };

@@ -87,22 +87,23 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 #enemy-party {
   overflow: auto;
   min-height: 135px;
+  height: 270px;
 }
 
-/* line 6, ../sass/partials/_monsters.scss */
+/* line 7, ../sass/partials/_monsters.scss */
 .enemy {
   box-sizing: border-box;
   padding: 1em;
   width: 420px;
   float: left;
 }
-/* line 11, ../sass/partials/_monsters.scss */
+/* line 12, ../sass/partials/_monsters.scss */
 .enemy ul {
   box-sizing: inherit;
   margin-left: 10px;
   float: left;
 }
-/* line 16, ../sass/partials/_monsters.scss */
+/* line 17, ../sass/partials/_monsters.scss */
 .enemy li {
   -webkit-user-select: none;
   /* Chrome/Safari */
@@ -111,19 +112,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -ms-user-select: none;
   /* IE10+ */
 }
-/* line 21, ../sass/partials/_monsters.scss */
+/* line 22, ../sass/partials/_monsters.scss */
 .enemy .enemyImage {
   box-sizing: inherit;
   width: 100px;
   height: 100px;
   float: left;
 }
-/* line 27, ../sass/partials/_monsters.scss */
+/* line 28, ../sass/partials/_monsters.scss */
 .enemy:hover {
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0.5);
 }
-/* line 31, ../sass/partials/_monsters.scss */
+/* line 32, ../sass/partials/_monsters.scss */
 .enemy:active {
   cursor: pointer;
   background-color: rgba(150, 0, 0, 0.9);
@@ -149,4 +150,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 #player:hover {
   cursor: pointer;
   background-color: rgba(0, 255, 0, 0.5);
+}
+/* line 18, ../sass/partials/_player.scss */
+#player #player-tummy {
+  height: 50px;
 }

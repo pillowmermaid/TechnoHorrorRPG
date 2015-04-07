@@ -2,6 +2,7 @@
     {
         "_id": 1,
         "image": "",
+        "digested": "",
         "name": "Uno",
         "family": "Biorganic",
         "class": "Balance",
@@ -16,6 +17,7 @@
     {
         "_id": 2,
         "image": "",
+        "digested": "",
         "name": "Dos",
         "family": "Technological",
         "class": "Aggressor",
@@ -30,6 +32,7 @@
     {
         "_id": 3,
         "image": "",
+        "digested": "",
         "name": "Tres",
         "family": "Technological",
         "class": "Stoic",
@@ -44,6 +47,7 @@
     {
         "_id": 4,
         "image": "",
+        "digested": "",
         "name": "Quattro",
         "family": "Supernatural",
         "class": "Swift",

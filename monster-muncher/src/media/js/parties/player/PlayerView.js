@@ -3,11 +3,11 @@ define(
         'backbone',
         'handlebars',
         'gameStates/BattleState',
-        'parties/playerParty/Player',
-        'parties/playerParty/PlayerTummyView',
-        'text!parties/playerParty/PlayerTemplate.html'
+        'parties/player/Player',
+        'parties/player/tummy/TummyView',
+        'text!parties/player/PlayerTemplate.html'
     ],
-    function(Backbone, Handlebars, BattleState, Player, PlayerTummyView, PlayerTemplate){
+    function(Backbone, Handlebars, BattleState, Player, TummyView, PlayerTemplate){
        var PlayerView = Backbone.View.extend({
             el: '#player-menu',
 
@@ -21,12 +21,12 @@ define(
             initialize: function(){
                 this.spawn();
                 this.on('hit', this.hit, this);
+                this.on('eat', this.eat, this);
                 this.on('levelUp', this.levelUp, this);
             },
 
             render: function(){
                 this.$el.html(this.template(this.model.toJSON()));
-                this.tummy = new PlayerTummyView();
                 return this;
             },
 
@@ -39,6 +39,12 @@ define(
 
             digest: function(){
                 console.log('Digesting!')
+            },
+
+            eat: function(enemy){
+                console.log('I\'m eating',enemy.model.get('name'));
+                this.tummy.ingest(enemy.model);
+                enemy.trigger('dead');
             },
 
             evolve: function(){
@@ -55,7 +61,7 @@ define(
                         var retaliate = true;
                         setTimeout(function(){
                             BattleState.attackTarget(enemy, me, retaliate); 
-                        },2000);
+                        },1200);
                     }
                     else{
                         console.log('End of Turn');
@@ -73,6 +79,7 @@ define(
 
             spawn: function(){
                 this.model = new Player();
+                this.tummy = new TummyView();
                 this.listenTo(this.model,'change',this.render);
                 this.render();
             }

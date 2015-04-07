@@ -2,11 +2,10 @@ define(
     [
         'backbone',
         'handlebars',
-        'text!parties/playerParty/FoodTemplate.html'
+        'text!parties/player/tummy/FoodTemplate.html'
     ],
     function(Backbone, Handlebars, FoodTemplate){
        var FoodView = Backbone.View.extend({
-            tagName: 'div',
             className: 'digested-monster',
 
             template: Handlebars.compile(FoodTemplate),
@@ -18,6 +17,7 @@ define(
             },
 
             render: function(){
+                console.log('RENDERING GOOD');
                 this.$el.html(this.template(this.model.toJSON()));
                 return this;
             },

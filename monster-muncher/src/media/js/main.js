@@ -1,15 +1,13 @@
 require(
     [
         'jquery',
-        'app/App',
-        'app/HandlebarsUtil',
+        'app/App'
     ],
-    function($, App, HandlebarsUtil){
+    function($, App){
         'use strict';
         console.log('MAIN INITIALIZE');
 
         $.ajaxSetup({timeout: 20000});
-        HandlebarsUtil.registerHelpers();
 
         App.start();
     }

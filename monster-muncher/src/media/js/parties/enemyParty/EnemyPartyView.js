@@ -13,9 +13,6 @@ define(
         var EnemyPartyView = Backbone.View.extend({
             el: '#enemy-party',
 
-            initialize: function(){
-            },
-
             render: function(){
                 this.$el.html('');
                 this.spawnParty();
@@ -24,7 +21,7 @@ define(
 
             spawnParty: function(){
                 console.log('SPAWNING');
-                this.newParty = new EnemyParty();
+                var newParty = new EnemyParty();
                 for(var i = 0; i<Math.floor((Math.random() * 4)+1); i++){
                     var monster = MonsterBank.models[Math.floor(Math.random() * MonsterBank.length)];
                     var enemy = new Enemy({
@@ -35,17 +32,14 @@ define(
                         description: monster.get('description'),
                         stats: monster.get('stats'),
                     });
-                    this.newParty.add(enemy);
+                    newParty.add(enemy);
                 }
-                _.each(this.newParty.models, function(enemy){
+                _.each(newParty.models, function(enemy){
                     var newEnemy = new EnemyView({model:enemy});
                     this.$el.append(newEnemy.render().el);
                 }, this)
             },
 
-            killMember: function(deadMan){
-                this.party.remove(deadMan);
-            }
         });
         return EnemyPartyView;
     } 
