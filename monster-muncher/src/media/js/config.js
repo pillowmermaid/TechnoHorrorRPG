@@ -11,7 +11,7 @@ var require = {
         // Backbone
         backbone:                    'lib/backbone',
 
-        handlebars:                  'lib/handlebars-v2.0.0'
+        handlebars:                  'lib/handlebars-v2.0.0',
 
     },
 

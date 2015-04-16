@@ -6,17 +6,20 @@ define(
         var Food = Backbone.Model.extend({
             initialize: function(){
                 switch(this.get('group')){
-                    case 'Balance':
+                    case 'Balanced':
                         this.ingestBalance();
                         break;
-                    case 'Aggressor':
+                    case 'Aggressive':
                         this.ingestAggressor();
                         break;
-                    case 'Stoic':
+                    case 'Sturdy':
                         this.ingestStoic();
                         break;
-                    case 'Swift':
+                    case 'Speedy':
                         this.ingestSwift();
+                        break;
+                    case 'Afternoon Snack':
+                        this.ingestDefault();
                         break;
                     default:
                         console.log('WHAT DID I EAT?');
@@ -34,6 +37,9 @@ define(
             },
             ingestSwift: function(){
                 console.log('SWIFT');
+            },
+            ingestDefault: function(){
+                console.log('yum.');
             }
         });
         return Food;

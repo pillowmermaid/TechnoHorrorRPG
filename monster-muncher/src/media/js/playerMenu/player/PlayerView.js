@@ -3,13 +3,15 @@ define(
         'backbone',
         'handlebars',
         'gameStates/BattleState',
-        'parties/player/Player',
-        'parties/player/tummy/TummyView',
-        'text!parties/player/PlayerTemplate.html'
+        'utils/GameLog',
+        'playerMenu/player/Player',
+        'playerMenu/player/tummy/TummyView',
+        'text!playerMenu/player/PlayerTemplate.html'
     ],
-    function(Backbone, Handlebars, BattleState, Player, TummyView, PlayerTemplate){
-       var PlayerView = Backbone.View.extend({
-            el: '#player-menu',
+    function(Backbone, Handlebars, BattleState, GameLog, Player, TummyView, PlayerTemplate){
+        'use strict';
+        var PlayerView = Backbone.View.extend({
+            el: '#player-container',
 
             template: Handlebars.compile(PlayerTemplate),
 
@@ -31,20 +33,26 @@ define(
             },
 
             dead: function(){
-                alert('I\'m dead!');
+                GameLog.message('I\'m dead!');
                 this.model.unbind()
                 this.model.destroy();
+                this.tummy.destroy();
                 this.spawn();
             },
 
             digest: function(){
-                console.log('Digesting!')
+                this.tummy.digest();
             },
 
             eat: function(enemy){
-                console.log('I\'m eating',enemy.model.get('name'));
-                this.tummy.ingest(enemy.model);
-                enemy.trigger('dead');
+                GameLog.message('I\'m eating '+enemy.model.get('name'));
+                if(this.tummy.collection.length < 4){
+                    this.tummy.ingest(enemy.model);
+                    enemy.trigger('dead');
+                }
+                else{
+                    GameLog.message('But I\'m full!');
+                }
             },
 
             evolve: function(){
@@ -53,7 +61,7 @@ define(
 
             hit: function(damage, enemy, retaliate){
                 this.model.set('stats', damage);
-                console.log(this.model.get('name'),'I took 1 damage and have',this.model.get('stats').HP,'HP left');
+                GameLog.message('I took 1 damage and have ' + this.model.get('stats').HP + 'HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{
                     var me = this;
@@ -64,7 +72,7 @@ define(
                         },1200);
                     }
                     else{
-                        console.log('End of Turn');
+                        GameLog.message('End of Turn');
                     }
                 }
             },
@@ -74,14 +82,14 @@ define(
             },
 
             poop: function(){
-                console.log('poop');
+                this.tummy.poop();
             },
 
             spawn: function(){
                 this.model = new Player();
-                this.tummy = new TummyView();
                 this.listenTo(this.model,'change',this.render);
                 this.render();
+                this.tummy = new TummyView();
             }
        });
        return new PlayerView;

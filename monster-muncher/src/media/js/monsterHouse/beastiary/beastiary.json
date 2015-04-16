@@ -5,7 +5,7 @@
         "digested": "",
         "name": "Uno",
         "family": "Biorganic",
-        "class": "Balance",
+        "class": "Balanced",
         "description": "A being well rounded in all skills",
         "stats": {
             "HP": 5,
@@ -20,7 +20,7 @@
         "digested": "",
         "name": "Dos",
         "family": "Technological",
-        "class": "Aggressor",
+        "class": "Aggressive",
         "description": "A being which excels in offensive skills",
         "stats": {
             "HP": 6,
@@ -35,7 +35,7 @@
         "digested": "",
         "name": "Tres",
         "family": "Technological",
-        "class": "Stoic",
+        "class": "Sturdy",
         "description": "A being which excels in defensive skills",
         "stats": {
             "HP": 8,
@@ -50,13 +50,28 @@
         "digested": "",
         "name": "Quattro",
         "family": "Supernatural",
-        "class": "Swift",
+        "class": "Speedy",
         "description": "A being which excels in agile skills",
         "stats": {
             "HP": 3,
             "POW": 5,
             "DEF": 2,
             "AGI": 10
+        }
+    },
+    {
+        "_id": 5,
+        "image": "",
+        "digested": "",
+        "name": "Eat Me",
+        "family": "Supernatural",
+        "class": "Afternoon Snack",
+        "description": "A being which excels at being eaten",
+        "stats": {
+            "HP": 1,
+            "POW": 5,
+            "DEF": 2,
+            "AGI": 1
         }
     }
 ]

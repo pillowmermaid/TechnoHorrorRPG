@@ -4,10 +4,11 @@ define(
         'underscore',
         'handlebars',
         'gameStates/BattleState',
-        'parties/player/PlayerView',
-        'text!parties/enemyParty/EnemyTemplate.html'
+        'utils/GameLog',
+        'playerMenu/player/PlayerView',
+        'text!enemyParty/EnemyTemplate.html'
     ],
-    function(Backbone, _, Handlebars, BattleState, PlayerView, EnemyTemplate){
+    function(Backbone, _, Handlebars, BattleState, GameLog, PlayerView, EnemyTemplate){
        var EnemyView = Backbone.View.extend({
             className:'enemy',
             template: Handlebars.compile(EnemyTemplate),
@@ -29,7 +30,7 @@ define(
             },
 
             dead: function(){
-                console.log(this.model.get('name'),'has been defeated');
+                GameLog.message(this.model.get('name')+' has been defeated');
                 this.model.destroy();
                 this.remove();
             },
@@ -44,7 +45,7 @@ define(
 
             hit: function(damage, player, retaliate){
                 this.model.set('stats', damage);
-                console.log(this.model.get('name'),'I took 2 damage and have',this.model.get('stats').HP,'HP left');
+                GameLog.message(this.model.get('name') + ' took 2 damage and has '+this.model.get('stats').HP+'HP left','</p>');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{
                     var me = this;
@@ -55,7 +56,7 @@ define(
                         }, 1200);
                     }
                     else{
-                        console.log('End of Turn');
+                        $('#gamelog').append('<p>End of Turn</p>');
                     }
                 }
             }

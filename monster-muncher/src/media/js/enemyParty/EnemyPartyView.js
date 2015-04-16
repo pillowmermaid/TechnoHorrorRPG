@@ -4,9 +4,9 @@ define(
         'underscore',
         'handlebars',
         'monsterHouse/beastiary/MonsterBank',
-        'parties/enemyParty/EnemyParty',
-        'parties/enemyParty/EnemyView',
-        'parties/enemyParty/Enemy',
+        'enemyParty/EnemyParty',
+        'enemyParty/EnemyView',
+        'enemyParty/Enemy',
     ],
     function(Backbone, _, Handlebars, MonsterBank, EnemyParty, EnemyView, Enemy) {
         'use strict';
@@ -20,7 +20,6 @@ define(
             },
 
             spawnParty: function(){
-                console.log('SPAWNING');
                 var newParty = new EnemyParty();
                 for(var i = 0; i<Math.floor((Math.random() * 4)+1); i++){
                     var monster = MonsterBank.models[Math.floor(Math.random() * MonsterBank.length)];

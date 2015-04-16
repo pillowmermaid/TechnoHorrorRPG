@@ -1,16 +1,14 @@
 #enemy-party{
 	overflow: auto;
-  min-height:135px;
-  height: 135px*2;
+  	min-height:135px;
+  	height: 135px*2;
 }
 
 .enemy{
-	box-sizing: border-box;
 	padding: 1em;
 	width: 420px;
 	float: left;
 	ul{
-		box-sizing:inherit;
 		margin-left:10px;
 		float:left;
 	}
@@ -20,7 +18,6 @@
 		-ms-user-select: none; /* IE10+ */
 	}
 	.enemyImage{
-		box-sizing:inherit;
 		width: 100px;
 		height: 100px;
 		float:left;

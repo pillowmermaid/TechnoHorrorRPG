@@ -1,7 +1,7 @@
 define(
     [
         'backbone',
-        'parties/player/tummy/Food',
+        'playerMenu/player/tummy/Food',
     ],
     function(Backbone, Food) {
         var Tummy = Backbone.Collection.extend({

@@ -2,7 +2,7 @@ define(
     [
         'backbone',
         'handlebars',
-        'parties/enemyParty/EnemyPartyView',
+        'enemyParty/EnemyPartyView',
         'text!areas/arena/ArenaTemplate.html'
     ],
     function(Backbone, Handlebars, EnemyPartyView, ArenaTemplate) {

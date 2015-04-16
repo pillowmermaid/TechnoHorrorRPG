@@ -7,9 +7,9 @@ define(
         	defaults:{
         		_id: 00,
         		image: "",
-        		name: "Fight Man",
+        		name: "Meatbun",
                 family: "",
-        		class: "Fightin",
+        		class: "Pathetic",
         		stats:{
         			
         		}

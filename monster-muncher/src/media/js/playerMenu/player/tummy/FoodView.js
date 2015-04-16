@@ -2,24 +2,29 @@ define(
     [
         'backbone',
         'handlebars',
-        'text!parties/player/tummy/FoodTemplate.html'
+        'text!playerMenu/player/tummy/FoodTemplate.html'
     ],
     function(Backbone, Handlebars, FoodTemplate){
        var FoodView = Backbone.View.extend({
-            className: 'digested-monster',
+            className: 'food',
 
             template: Handlebars.compile(FoodTemplate),
 
 
             initialize: function(){
-                console.log(this.model);
                 this.listenTo(this.model, 'change', this.render);
+                this.on('eject', this.eject, this);
             },
 
             render: function(){
-                console.log('RENDERING GOOD');
                 this.$el.html(this.template(this.model.toJSON()));
                 return this;
+            },
+
+            eject: function(){
+                console.log(this.model.get('group'),'has been pooped out');
+                this.model.destroy();
+                this.remove();
             },
        });
        return FoodView;

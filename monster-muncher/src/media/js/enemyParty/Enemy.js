@@ -7,18 +7,21 @@ define(
         var Enemy = Backbone.Model.extend({
         	initialize: function(){
         		switch(this.get('class')){
-        			case 'Balance':
+        			case 'Balanced':
         				this.spawnBalance();
         				break;
-        			case 'Aggressor':
+        			case 'Aggressive':
         				this.spawnAggressor();
         				break;
-        			case 'Stoic':
+        			case 'Sturdy':
         				this.spawnStoic();
         				break;
-        			case 'Swift':
+        			case 'Speedy':
         				this.spawnSwift();
         				break;
+                    case 'Afternoon Snack':
+                        this.spawnDefault();
+                        break;
         			default:
         				console.log('WHAT AM I?');
         				break;
@@ -60,6 +63,9 @@ define(
         		}
         		this.set({'stats': stats});
         	},
+            spawnDefault: function(){
+                this.set({'stats': this.get('stats')});
+            },
         	statRoller: function(stat, level){
                 var roller = level.toUpperCase();
                 var stat;

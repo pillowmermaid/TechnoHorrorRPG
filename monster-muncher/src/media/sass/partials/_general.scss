@@ -1,9 +1,28 @@
+body div, ul{
+    box-sizing: border-box;
+}
+
 #site-container{
-  height:100%;
-  width:100%;
-  min-width:470px;
-  max-width:875px;
-  margin: 20px auto;
-  padding:1em;
-  box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    min-width: 470px;
+    max-width: 875px;
+    margin: 20px auto;
+    padding: 1em;
+}
+
+#player-menu{
+    border-style: solid;
+    border-width: 1px;
+    padding: 1em;
+    width: 100%;
+    top: -100%;
+    overflow: auto;
+}
+
+#gamelog-container{
+    height: 116px;
+    padding: 0.25em 0.5em;
+    overflow: auto;
+    background-color: lightgrey;
 }
