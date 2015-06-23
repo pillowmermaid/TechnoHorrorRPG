@@ -9,7 +9,7 @@ define(
         var GameLog = Backbone.View.extend({
 
             message: function(msg){
-                $('#gamelog').append('<p>'+msg+'</p>');
+                $('#gamelog').prepend('<p>'+msg+'</p>');
             }
 
         });

@@ -3,7 +3,7 @@ define(
         'backbone',
         'underscore',
         'handlebars',
-        'gameStates/BattleState',
+        'utils/BattleState',
         'utils/GameLog',
         'playerMenu/player/PlayerView',
         'text!enemyParty/EnemyTemplate.html'

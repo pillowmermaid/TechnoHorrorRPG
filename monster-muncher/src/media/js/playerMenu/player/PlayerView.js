@@ -2,7 +2,7 @@ define(
     [
         'backbone',
         'handlebars',
-        'gameStates/BattleState',
+        'utils/BattleState',
         'utils/GameLog',
         'playerMenu/player/Player',
         'playerMenu/player/tummy/TummyView',
@@ -29,19 +29,28 @@ define(
 
             render: function(){
                 this.$el.html(this.template(this.model.toJSON()));
+                if(this.tummy){
+                    this.tummy.render();
+                }
                 return this;
             },
 
             dead: function(){
                 GameLog.message('I\'m dead!');
+                this.tummy.remove();
                 this.model.unbind()
                 this.model.destroy();
-                this.tummy.destroy();
                 this.spawn();
             },
 
             digest: function(){
-                this.tummy.digest();
+                if(this.tummy.collection.length > 0 ){
+                    var afterHeal = _.clone(this.model.get('stats'));
+                    var healBy = this.tummy.digest();
+                    afterHeal.HP += healBy;
+                    this.model.set('stats', afterHeal);
+                    this.tummy.flush();
+                }
             },
 
             eat: function(enemy){
@@ -88,8 +97,8 @@ define(
             spawn: function(){
                 this.model = new Player();
                 this.listenTo(this.model,'change',this.render);
-                this.render();
                 this.tummy = new TummyView();
+                this.render();
             }
        });
        return new PlayerView;

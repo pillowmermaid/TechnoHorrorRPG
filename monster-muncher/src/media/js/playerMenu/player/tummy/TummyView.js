@@ -4,11 +4,12 @@ define(
         'underscore',
         'handlebars',
         'utils/GameLog',
+        'utils/Combolist',
         'playerMenu/player/tummy/Tummy',
         'playerMenu/player/tummy/FoodView',
         'playerMenu/player/tummy/Food'
     ],
-    function(Backbone, _, Handlebars, GameLog, Tummy, FoodView, Food) {
+    function(Backbone, _, Handlebars, GameLog, Combolist, Tummy, FoodView, Food) {
         'use strict';
         var TummyView = Backbone.View.extend({
             el: '#player-tummy',
@@ -18,12 +19,31 @@ define(
                 this.views = [];
             },
 
+            render: function(){
+                this.$el.html('');
+                if(this.views.length > 0){
+                    _.each(this.views, function(food){
+                        console.log('rendering foods');
+                        $('#player-tummy').append(food.render().el);
+                    }, this);
+                }
+                return this;
+            },
+
             digest: function(){
                 if(this.collection.length <= 0){
                     GameLog.message('But I haven\'t eaten anything!');
                 }
                 else{
+                    return Combolist.sortem(this.views);
                 }
+            },
+
+            flush: function(){
+                var me = this;
+                _.each(this.collection, function(){
+                    me.poop();
+                }, this);
             },
 
             ingest: function(enemy){
