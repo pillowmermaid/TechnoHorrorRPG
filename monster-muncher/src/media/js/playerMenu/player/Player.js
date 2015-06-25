@@ -22,7 +22,23 @@ define(
                     DEF: Math.floor(Math.random()*6+5),
                     AGI: Math.floor(Math.random()*5+2),
                 });
-            }
+            },
+
+            damage: function(damage){
+                this.set('stats', damage);
+            },
+
+            grow: function(){
+
+            },
+
+            heal: function(heal){
+                var healthUp = _.clone(this.get('stats'));
+                healthUp.HP += heal;
+                this.set('stats', healthUp);
+            },
+
+
         });
         return Player;
     }

@@ -36,7 +36,7 @@ define(
             },
 
             dead: function(){
-                GameLog.message('I\'m dead!');
+                alert('I\'m dead!');
                 this.tummy.remove();
                 this.model.unbind()
                 this.model.destroy();
@@ -45,11 +45,13 @@ define(
 
             digest: function(){
                 if(this.tummy.collection.length > 0 ){
-                    var afterHeal = _.clone(this.model.get('stats'));
-                    var healBy = this.tummy.digest();
-                    afterHeal.HP += healBy;
-                    this.model.set('stats', afterHeal);
-                    this.tummy.flush();
+                    if(typeof this.tummy.digest() === 'number'){
+                        this.model.heal(this.tummy.digest());
+                        this.tummy.flush();
+                    }
+                }
+                else{
+                    GameLog.message('I haven\'t eaten anything yet!');
                 }
             },
 
@@ -60,7 +62,7 @@ define(
                     enemy.trigger('dead');
                 }
                 else{
-                    GameLog.message('But I\'m full!');
+                    GameLog.message('I\'m too full to eat anymore!');
                 }
             },
 
@@ -69,7 +71,7 @@ define(
             },
 
             hit: function(damage, enemy, retaliate){
-                this.model.set('stats', damage);
+                this.model.damage(damage);
                 GameLog.message('I took 1 damage and have ' + this.model.get('stats').HP + 'HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{

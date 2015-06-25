@@ -1,9 +1,8 @@
 define(
     [
-        'backbone',
         'underscore',
     ],
-    function(Backbone, _) {
+    function(_) {
         'use strict';
         var BattleState = {
             attackPhase: function(enemy, player){
@@ -44,7 +43,7 @@ define(
                     console.log('Target could not be eaten!');
                     setTimeout(function(){
                         bs.attackTarget(player,this,true);
-                    },2000);
+                    },1200);
                 }
             }
 

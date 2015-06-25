@@ -1,15 +1,14 @@
 define(
     [
-        'backbone',
         'underscore'
     ],
-    function(Backbone, _) {
+    function(_) {
         'use strict';
         var Combolist = {
             sortem: function(foods){
                 switch(foods.length){
                     case 4:
-                        this.mixem(foods);
+                        return this.mixem(foods);
                         break;
                     default:
                         return this.healem(foods.length);
@@ -23,7 +22,7 @@ define(
             },
 
             mixem: function(monsters){
-
+                console.log(monsters);
             }
         };
         return Combolist;
