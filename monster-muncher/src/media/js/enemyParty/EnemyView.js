@@ -44,8 +44,8 @@ define(
             },
 
             hit: function(damage, player, retaliate){
-                this.model.set('stats', damage);
-                GameLog.message(this.model.get('name') + ' took 2 damage and has '+this.model.get('stats').HP+'HP left','</p>');
+                this.model.damage(damage);
+                GameLog.message(this.model.get('name') + ' took 2 damage and has '+this.model.get('stats').HP+' HP left','</p>');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{
                     var me = this;
@@ -56,7 +56,9 @@ define(
                         }, 1200);
                     }
                     else{
-                        $('#gamelog').append('<p>End of Turn</p>');
+                        setTimeout(function(){
+                            GameLog.message('End of Turn');
+                        }, 1200);
                     }
                 }
             }

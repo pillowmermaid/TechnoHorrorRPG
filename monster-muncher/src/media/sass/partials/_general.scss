@@ -25,4 +25,9 @@ body div, ul{
     padding: 0.25em 0.5em;
     overflow: auto;
     background-color: lightgrey;
+    #gamelog{
+        p:first-child{
+            font-weight: bold;
+        }
+    }
 }

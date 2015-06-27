@@ -23,7 +23,6 @@ define(
                 this.$el.html('');
                 if(this.views.length > 0){
                     _.each(this.views, function(food){
-                        console.log('rendering foods');
                         $('#player-tummy').append(food.render().el);
                     }, this);
                 }

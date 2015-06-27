@@ -34,15 +34,14 @@ define(
             can eat them; removing it from the battlefield and placing
             it in the player's "belly" */
             eatTarget: function(target, player){
-                var bs = this;
+                var me = this;
                 var targetHP = target.model.get('stats').HP;
                 if( targetHP <= 2 ){
                     player.trigger('eat', target);
                 }
                 else{
-                    console.log('Target could not be eaten!');
                     setTimeout(function(){
-                        bs.attackTarget(player,this,true);
+                        me.attackTarget(player,this,true);
                     },1200);
                 }
             }

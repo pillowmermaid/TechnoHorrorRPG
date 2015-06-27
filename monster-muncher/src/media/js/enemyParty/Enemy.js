@@ -27,13 +27,18 @@ define(
         				break;
         		}
         	},
+
+            damage: function(damage){
+                this.set('stats', damage);
+            },
+            
         	spawnAggressor: function(){
         		var stats = {
         			'HP': this.statRoller(this.get('stats').HP,'MID'),
         			'POW': this.statRoller(this.get('stats').POW,'LOW'),
         			'DEF': this.statRoller(this.get('stats').DEF,'HIGH'),
         			'AGI': this.statRoller(this.get('stats').AGI,'HIGH')
-        		}
+        		};
         		this.set({'stats': stats});
         	},
         	spawnBalance: function(){
@@ -42,7 +47,7 @@ define(
         			'POW': this.statRoller(this.get('stats').POW,'MID'),
         			'DEF': this.statRoller(this.get('stats').DEF,'MID'),
         			'AGI': this.statRoller(this.get('stats').AGI,'MID')
-        		}
+        		};
         		this.set({'stats': stats});
         	},
         	spawnStoic: function(){	
@@ -51,8 +56,8 @@ define(
         			'POW': this.statRoller(this.get('stats').POW,'HIGH'),
         			'DEF': this.statRoller(this.get('stats').DEF,'LOW'),
         			'AGI': this.statRoller(this.get('stats').AGI,'HIGH')
-        		}
-        		this.set({'stats': stats});
+        		};
+				this.set({'stats': stats});
         	},
         	spawnSwift: function(){
         		var stats = {
@@ -60,7 +65,7 @@ define(
         			'POW': this.statRoller(this.get('stats').POW,'MID'),
         			'DEF': this.statRoller(this.get('stats').DEF,'HIGH'),
         			'AGI': this.statRoller(this.get('stats').AGI,'LOW')
-        		}
+        		};
         		this.set({'stats': stats});
         	},
             spawnDefault: function(){
@@ -68,7 +73,6 @@ define(
             },
         	statRoller: function(stat, level){
                 var roller = level.toUpperCase();
-                var stat;
                 switch(roller){
                     case 'HIGH':
                         stat = Math.floor(Math.random()*((stat+3)-(stat-3)+1))+(stat-3);

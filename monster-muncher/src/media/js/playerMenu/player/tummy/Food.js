@@ -27,19 +27,19 @@ define(
                 }
             },
             ingestAggressor: function(){
-                console.log('AGRES');
+            
             },
             ingestBalance: function(){
-                console.log('BAL');
+                
             },
             ingestStoic: function(){ 
-                console.log('STOI');
+            
             },
             ingestSwift: function(){
-                console.log('SWIFT');
+            
             },
             ingestDefault: function(){
-                console.log('yum.');
+            
             }
         });
         return Food;

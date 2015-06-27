@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     jshint: {
       files: [
         'gruntfile.js',
-        'src/js/*.js',
+        'src/media/js/*.js',
         'test/**/*.js'
       ]
     },
@@ -13,10 +13,10 @@ module.exports = function(grunt) {
     compass: {
       dev: {
         options: {
-          sassDir: 'src/sass',
-          cssDir: 'src/stylesheets',
-          imagesDir: 'src/img',
-          javascriptsDir: 'src/js',
+          sassDir: 'src/media/sass',
+          cssDir: 'src/media/stylesheets',
+          imagesDir: 'src/media/img',
+          javascriptsDir: 'src/media/js',
           noLineComments: false,
           environment: 'development'
         }
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         tasks: ['jshint']
       },
       compass: {
-        files: 'src/sass/**/*',
+        files: 'src/media/sass/**/*',
         tasks: ['compass:dev'],
         options: {
           interrupt: true

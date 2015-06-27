@@ -7,12 +7,11 @@ define(
         	defaults:{
         		_id: 00,
         		image: "",
-        		name: "Meatbun",
+        		name: "Ibi Yibi",
                 family: "",
         		class: "Pathetic",
-        		stats:{
-        			
-        		}
+        		stats:{}
+
         	},
 
             initialize: function(){

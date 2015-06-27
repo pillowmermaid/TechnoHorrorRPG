@@ -22,7 +22,6 @@ define(
             },
 
             eject: function(){
-                console.log(this.model.get('group'),'has been pooped out');
                 this.model.destroy();
                 this.remove();
             },

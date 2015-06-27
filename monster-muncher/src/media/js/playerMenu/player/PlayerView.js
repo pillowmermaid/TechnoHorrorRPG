@@ -72,7 +72,7 @@ define(
 
             hit: function(damage, enemy, retaliate){
                 this.model.damage(damage);
-                GameLog.message('I took 1 damage and have ' + this.model.get('stats').HP + 'HP left');
+                GameLog.message('I took 2 damage and have ' + this.model.get('stats').HP + ' HP left');
                 if(this.model.get('stats').HP === 0){ this.dead(); }
                 else{
                     var me = this;
@@ -83,7 +83,9 @@ define(
                         },1200);
                     }
                     else{
-                        GameLog.message('End of Turn');
+                        setTimeout(function(){
+                            GameLog.message('End of Turn');
+                        }, 1200);
                     }
                 }
             },
