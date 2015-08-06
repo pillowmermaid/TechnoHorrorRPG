@@ -27,6 +27,7 @@ define(
                         _id: monster.get('_id'),
                         image: monster.get('image'),
                         name: monster.get('name'),
+                        family: monster.get('family'),
                         class: monster.get('class'),
                         description: monster.get('description'),
                         stats: monster.get('stats'),

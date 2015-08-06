@@ -67,12 +67,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 1, ../sass/partials/_general.scss */
+/* line 3, ../sass/partials/_general.scss */
 body div, ul {
   box-sizing: border-box;
 }
 
-/* line 5, ../sass/partials/_general.scss */
+/* line 7, ../sass/partials/_general.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 10, ../sass/partials/_general.scss */
 #site-container {
   height: 100%;
   width: 100%;
@@ -82,39 +87,66 @@ body div, ul {
   padding: 1em;
 }
 
-/* line 14, ../sass/partials/_general.scss */
-#player-menu {
-  border-style: solid;
-  border-width: 1px;
-  padding: 1em;
-  width: 100%;
-  top: -100%;
-  overflow: auto;
-}
-
-/* line 23, ../sass/partials/_general.scss */
+/* line 19, ../sass/partials/_general.scss */
 #gamelog-container {
-  height: 116px;
+  height: 90%;
+  width: 70%;
+  left: 15em;
+  position: absolute;
   padding: 0.25em 0.5em;
   overflow: auto;
   background-color: lightgrey;
 }
-/* line 29, ../sass/partials/_general.scss */
+/* line 28, ../sass/partials/_general.scss */
 #gamelog-container #gamelog p:first-child {
   font-weight: bold;
+}
+
+/* line 34, ../sass/partials/_general.scss */
+.portrait {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-position-y: 150px;
+  float: left;
+}
+
+/* line 42, ../sass/partials/_general.scss */
+.portrait.pc {
+  background-image: url("../../media/images/pc.png");
+}
+
+/* line 45, ../sass/partials/_general.scss */
+.portrait.earth {
+  background-image: url("../../media/images/earth.png");
+}
+
+/* line 48, ../sass/partials/_general.scss */
+.portrait.robo {
+  background-image: url("../../media/images/robo.png");
+}
+
+/* line 51, ../sass/partials/_general.scss */
+.portrait.space {
+  background-image: url("../../media/images/space.png");
+}
+
+/* line 54, ../sass/partials/_general.scss */
+.portrait.ghost {
+  background-image: url("../../media/images/ghost.png");
 }
 
 /* line 1, ../sass/partials/_monsters.scss */
 #enemy-party {
   overflow: auto;
   min-height: 135px;
-  height: 270px;
+  height: 550px;
 }
 
 /* line 7, ../sass/partials/_monsters.scss */
 .enemy {
   padding: 1em;
-  width: 420px;
+  width: 300px;
   float: left;
 }
 /* line 11, ../sass/partials/_monsters.scss */
@@ -150,30 +182,32 @@ body div, ul {
 
 /* line 1, ../sass/partials/_player.scss */
 #player-container {
-  width: 220px;
-  float: left;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1em;
+  width: 240px;
+  position: relative;
+  overflow: auto;
 }
-
-/* line 7, ../sass/partials/_player.scss */
-#player:hover {
-  cursor: pointer;
-  background-color: rgba(0, 255, 0, 0.5);
+/* line 9, ../sass/partials/_player.scss */
+#player-container #player .portrait {
+  float: none;
 }
-/* line 11, ../sass/partials/_player.scss */
-#player #player-tummy {
+/* line 16, ../sass/partials/_player.scss */
+#player-container #player #player-tummy {
   height: 50px;
   width: 100%;
 }
-/* line 14, ../sass/partials/_player.scss */
-#player #player-tummy .food {
+/* line 19, ../sass/partials/_player.scss */
+#player-container #player #player-tummy .food {
   float: left;
   margin-right: 5px;
   height: 50px;
   width: 50px;
   background-color: red;
 }
-/* line 20, ../sass/partials/_player.scss */
-#player #player-tummy .food img {
+/* line 25, ../sass/partials/_player.scss */
+#player-container #player #player-tummy .food img {
   width: 100%;
   height: 100%;
 }

@@ -4,7 +4,7 @@
         "image": "",
         "digested": "",
         "name": "Astrimi",
-        "family": "Extraplanetary",
+        "family": "space",
         "class": "Balanced",
         "description": "A being well rounded in all skills",
         "stats": {
@@ -19,7 +19,7 @@
         "image": "",
         "digested": "",
         "name": "Tekn'rok",
-        "family": "Technological",
+        "family": "robo",
         "class": "Aggressive",
         "description": "A being which excels in offensive skills",
         "stats": {
@@ -34,7 +34,7 @@
         "image": "",
         "digested": "",
         "name": "Squibble",
-        "family": "Biorganic",
+        "family": "earth",
         "class": "Sturdy",
         "description": "A being which excels in defensive skills",
         "stats": {
@@ -49,7 +49,7 @@
         "image": "",
         "digested": "",
         "name": "Goosgos",
-        "family": "Supernatural",
+        "family": "ghost",
         "class": "Speedy",
         "description": "A being which excels in agile skills",
         "stats": {

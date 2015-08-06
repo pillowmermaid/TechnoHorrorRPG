@@ -1,7 +1,12 @@
+@import "variables";
+
 body div, ul{
     box-sizing: border-box;
 }
 
+.clearfix {
+    clear: both;
+}
 #site-container{
     height: 100%;
     width: 100%;
@@ -11,17 +16,11 @@ body div, ul{
     padding: 1em;
 }
 
-#player-menu{
-    border-style: solid;
-    border-width: 1px;
-    padding: 1em;
-    width: 100%;
-    top: -100%;
-    overflow: auto;
-}
-
 #gamelog-container{
-    height: 116px;
+    height: 90%;
+    width: 70%;
+    left: 15em;
+    position: absolute;
     padding: 0.25em 0.5em;
     overflow: auto;
     background-color: lightgrey;
@@ -31,3 +30,27 @@ body div, ul{
         }
     }
 }
+
+.portrait {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position-y: 150px;
+    float: left;
+}
+
+.portrait.pc {
+    background-image: url($img_url + '/pc.png');
+}
+.portrait.earth {
+    background-image: url($img_url + '/earth.png');
+} 
+.portrait.robo {
+    background-image: url($img_url + '/robo.png');
+} 
+.portrait.space {
+    background-image: url($img_url + '/space.png');
+}
+.portrait.ghost {
+    background-image: url($img_url + '/ghost.png');
+} 

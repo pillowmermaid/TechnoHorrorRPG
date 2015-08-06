@@ -1,12 +1,12 @@
 #enemy-party{
 	overflow: auto;
   	min-height:135px;
-  	height: 135px*2;
+  	height: 550px;
 }
 
 .enemy{
 	padding: 1em;
-	width: 420px;
+	width: 300px;
 	float: left;
 	ul{
 		margin-left:10px;
@@ -30,4 +30,8 @@
 		cursor: pointer;
 		background-color: rgba(150,0,0,0.9);
 	}
+}
+
+@media (width: 480px){
+	
 }

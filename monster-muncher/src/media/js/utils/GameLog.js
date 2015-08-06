@@ -9,7 +9,19 @@ define(
         var GameLog = Backbone.View.extend({
 
             message: function(msg){
-                $('#gamelog').prepend('<p>'+msg+'</p>');
+                $('#gamelog').html('<p>'+msg+'</p>');
+            },
+
+            enemyMessage: function(msg){
+
+            },
+
+            playerDamage: function(msg){
+                
+            },
+
+            playerMessage: function(msg){
+
             }
 
         });
