@@ -17,7 +17,6 @@ define(
             },
 
             healem: function(hp){
-                console.log(hp);
                 return hp
             },
 
