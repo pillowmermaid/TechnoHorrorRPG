@@ -6,7 +6,7 @@
         "name": "Astrimi",
         "family": "space",
         "class": "Balanced",
-        "description": "A being well rounded in all skills",
+        "description": "A being which excels in normality",
         "stats": {
             "HP": 5,
             "POW": 5,
@@ -21,7 +21,7 @@
         "name": "Tekn'rok",
         "family": "robo",
         "class": "Aggressive",
-        "description": "A being which excels in offensive skills",
+        "description": "A being which excels in offense",
         "stats": {
             "HP": 6,
             "POW": 10,
@@ -36,7 +36,7 @@
         "name": "Squibble",
         "family": "earth",
         "class": "Sturdy",
-        "description": "A being which excels in defensive skills",
+        "description": "A being which excels in defense",
         "stats": {
             "HP": 8,
             "POW": 4,
@@ -51,7 +51,7 @@
         "name": "Goosgos",
         "family": "ghost",
         "class": "Speedy",
-        "description": "A being which excels in agile skills",
+        "description": "A being which excels in agility",
         "stats": {
             "HP": 3,
             "POW": 5,
@@ -64,9 +64,9 @@
         "image": "",
         "digested": "",
         "name": "Meatbun",
-        "family": "Supernatural",
+        "family": "food",
         "class": "Afternoon Snack",
-        "description": "A being which excels at being eaten",
+        "description": "A being which excels in being eaten",
         "stats": {
             "HP": 1,
             "POW": 5,

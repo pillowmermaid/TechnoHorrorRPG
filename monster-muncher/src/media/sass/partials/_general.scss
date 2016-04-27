@@ -39,20 +39,20 @@ body div, ul{
     background-size: cover;
     background-position-y: 150px;
     float: left;
+    &.pc,
+    &.food {
+        background-image: url($img_url + '/pc.png');
+    }
+    &.earth {
+        background-image: url($img_url + '/earth.png');
+    }
+    &.robo {
+        background-image: url($img_url + '/robo.png');
+    }
+    &.space {
+        background-image: url($img_url + '/space.png');
+    }
+    &.ghost {
+        background-image: url($img_url + '/ghost.png');
+    }
 }
-
-.portrait.pc {
-    background-image: url($img_url + '/pc.png');
-}
-.portrait.earth {
-    background-image: url($img_url + '/earth.png');
-} 
-.portrait.robo {
-    background-image: url($img_url + '/robo.png');
-} 
-.portrait.space {
-    background-image: url($img_url + '/space.png');
-}
-.portrait.ghost {
-    background-image: url($img_url + '/ghost.png');
-} 
