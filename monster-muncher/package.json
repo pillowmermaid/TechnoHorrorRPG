@@ -10,7 +10,7 @@
   },
   "readme": "README.md",
   "devDependencies": {
-    "express": "3.3.4",
+    "express": "4.19.2",
     "underscore": "1.4.x",
     "grunt": "0.4.x",
     "grunt-contrib-jshint": "0.5.x",
